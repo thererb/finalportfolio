@@ -1,0 +1,38 @@
+# Name of file: adventure_section2
+# Name of programmer: Robert Brown
+# Date: 10/23/22
+# Description: main file that will control the second section of the game
+import adventure_section3
+import adventure_mc
+import actions
+
+def start():
+    print("As you make your way downstairs, you hear a horrifying growl echo through the lower levels of the building,"
+          " \n And a monster sees you and begins chasing you. ")
+    print("Pick next option")
+    print(" 1. Look for resources. 2. Keep running. 3. Call for help. 4. Find weapon.")
+    if adventure_mc.injury_status == 1: #adds option to heal if injured
+        print("5. Use bandage")
+    choice = 0
+    while choice != 2:
+        choice = int(input("What will you do?"))
+        if choice == 1 and "survey item" not in adventure_mc.inventory:
+            print("You stumble around in the chaos and injury yourself but, you have found a flashlight, It can be used to explore and blind the monster.")
+            adventure_mc.injury_status += 1
+            adventure_mc.inventory.append("survey item")
+            #adventure_section3.start("high") future implementation
+        elif choice == 1 and "survey item" in adventure_mc.inventory: #checks for item if they can only carry one
+            print("You already have a flashlight in your inventory!")
+        elif choice == 2:
+            print("You run downstairs away from the monster to the ground floor and find yourself free for the time being.")
+            adventure_section3.start()
+        elif choice == 3:
+            print("You call for help and it seems like no one can hear you right now.")
+            adventure_mc.helps += 1 #adds to help counter
+        elif choice == 4:
+            print("As you are sprinting, you come across a metal pipe that looks sturdy! It can be used as a weapon.")
+            adventure_mc.inventory.append("weapon") #add weapon to inventory
+        elif choice == 5:
+            actions.heal() #calls heal function
+        else:
+            print("Please use the numbers given! Try again!")
