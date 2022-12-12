@@ -1,0 +1,5 @@
+#Robert Brown
+#11/1/2022
+#Prints Hello World 100 times
+for i in range(100):
+    print("Hello World")
