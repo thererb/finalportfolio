@@ -1,0 +1,9 @@
+#Robert Brown
+#12/2/22
+#Takes two inputs from a user and prints whether they are equal or not
+x = int(input("Choose a number"))
+y = int(input("Choose another number"))
+if x == y:
+    print(True)
+elif x != y:
+    print(False)

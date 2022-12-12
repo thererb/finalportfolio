@@ -1,0 +1,9 @@
+#Robert Brown
+#12/2/22
+#Take year as parameter and return true if leap year false if not
+year = int(input("Choose a year: "))
+
+if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
+    print(True, "This year is a leap year.")
+else:
+    print(False,"This year is not a leap year.")
