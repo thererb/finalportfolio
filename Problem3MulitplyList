@@ -1,0 +1,10 @@
+# Robert Brown
+# 11/15/22
+# Function to multiply numbers in a list
+list1 = [1,2,3,4]
+def multiplyList(myList):
+    result = 1
+    for x in myList:
+        result = result * x
+    return result
+print(multiplyList(list1))
