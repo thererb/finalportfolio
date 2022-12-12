@@ -1,0 +1,13 @@
+# Robert Brown
+# 11/15/22
+# Area of a circle using function
+import math
+
+r = input("Please input the radius")
+
+def circlearea(x):
+    x = math.pi * int(r) ** 2
+    print(x)
+
+
+circlearea(r)
