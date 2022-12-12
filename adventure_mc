@@ -1,0 +1,22 @@
+# Name of file: adventure_mc
+# Name of programmer: Robert Brown
+# Date: 10/23/22
+# Description: main file that will control the main character of the game
+import actions
+
+global name
+global inventory
+global injury_status
+global helps
+global heal
+
+name = "John Fear"
+inventory = [""] #tracks current items
+# Add call for help, counter then check value with sections else keep going
+# if "shovel" in adventure_mc.main_character.inventory and adventure_mc.maincharacter.hp <=1:
+injury_status = 0 #0 is safe. 1 is mild injury. 2 is major injury
+# Keeps track of the number of bandages the player has; they're only allowed to carry one at a time
+bandage = 0 #tracks bandage for the player
+helps = 0 #tracks call for help counter
+
+

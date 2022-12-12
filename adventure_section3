@@ -1,0 +1,55 @@
+# Name of file: adventure_section3
+# Name of programmer: Robert Brown
+# Date: 10/23/22
+# Description: main file that will control the third section of the game
+import adventure_mc
+import adventure_section2
+import actions
+def start(): #def start(danger): future implementation for level states?
+    print("On the first floor of the hospital, the monster hears your hurry to the door and blocks it. "
+          "\n You are at a standoff with the beast.")
+    print("Pick an option.")
+    print("1. Fight the monster. 2. Run away. 3. Call for help. 4. Charge towards the exit.")
+    if "weapon" in adventure_mc.inventory: #adds option depending on inventory
+        print('5. Attack with weapon.')
+    if adventure_mc.injury_status == 1 or 2 or 3 and "bandage" in adventure_mc.inventory: #adds option to heal if injured
+        print("6. Use bandage")
+    choice = 0
+
+    while (choice != 3) or choice == 3 and adventure_mc.helps >= 3:
+
+
+        choice = int(input("What will you do?"))
+        if choice == 1:
+            print("You decide to fight the monster and it kills you.")
+            print("You died!") #lose condition
+            exit()
+        elif choice == 2:
+            print("You run away and retreat back into the hospital.")
+            adventure_section2.start() #returns to previous section
+        elif choice == 3 and adventure_mc.helps == 0:
+            print("You call for help and no one hears you.")
+            adventure_mc.helps += 1
+            start()
+        elif choice == 3 and adventure_mc.helps != 0:
+            print("After all your calls for help, your prayers are finally answered! The cops are here!")
+            print("You win!") #win condition
+            exit()
+        elif choice == 4:
+            print("You charge towards the exit but the door is jammed from the outside.")
+            print("The monster corners you!")
+            print("You are dead!") #lose condition
+            exit()
+        elif choice == 4 and "survey item" in adventure_mc.inventory:
+            print("You charge towards the exit and you use your flashlight to break the handle! You made it out!") #win condition
+            exit()
+        elif choice == 5 and "weapon" in adventure_mc.inventory:
+            print("You attack the monster with your weapon, killing it!")
+            print("You win!") #win condition
+            exit()
+        elif choice == 6:
+            actions.heal() #calls heal function
+        else:
+            print("Please use the numbers given! Try again!")
+#def start(danger):
+#if danger == extreme

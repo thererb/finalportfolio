@@ -1,0 +1,75 @@
+#Name of programmer: Robert Brown
+#Date: 12/5/22
+#Description: File that initializes one of two random events in the first section of the game
+
+
+
+##eventchance = random.randint(1,2)
+def randomevent(eventchance):
+    print("Something feels eerie about it!")
+    EventResolved = 0  # Initializes EventResolved, allowing events to occur
+
+
+    ## The first random event
+    if eventchance == 1:
+        print("You go up to it, looking to open it, How will you open it? ")
+        print("1. Peek through.")
+        print("2. Whip it open with force.")
+        print("3. Knock with nervous manners.")
+
+        while EventResolved == 0:  # While loop runs as long as the EventResolved flag isn't changed to 1.
+            EventChoice = input("You decide to...")
+            if EventChoice == "1":
+                print(
+                    "You peek through and get jump scared by a rat!. It acts as if its a local resident!")
+                print()
+                EventResolved = 1
+                return ()
+            elif EventChoice == "2":
+                print(
+                    "You use everything you got on the closet in hopes that it will lessen the fear inside!")
+                print()
+                print("Disappointment hits when you see that it is empty!")
+                print("You scaredy cat!")
+                EventResolved = 1
+
+            elif EventChoice == "3":
+                print("You nervously listen for a response, but hear nothing, so you open it normally.")
+                print("You see what looks to be a human heart! Gosh! Oh wait, it's just a medical prop!")
+                EventResolved = 1
+                return ()
+            else:
+                print("Error, please enter 1, 2, or 3.")
+
+    ## The second possible random event
+    elif eventchance == 2:
+        print(
+            "You find signs of something odd that grabs your attention. Looks like a hole in the wall with a stench coming through.")
+        print()
+        print("1. Look inside the hole.")
+        print("2. Cover the hole up.")
+        print("3. Leave it alone.")
+        while EventResolved == 0:
+            EventChoice = input("What do you do?")
+            if EventChoice == "1":
+                print(
+                    " Inside the hole you find dried up animal remains along with what looks like a fresh one. Something else is here!")
+                print()
+                EventResolved = 1
+                return ()
+            elif EventChoice == "2":
+                print(
+                    "You pick up a nearby anatomy poster and stick it to the hole. Nothing to see here then!")
+                print()
+                EventResolved = 1
+                return ()
+            elif EventChoice == "3":
+                print(
+                    "Not giving it a shot, you move on because you want to get out and stop dawdling around.")
+                print()
+                EventResolved = 1
+
+            else:
+                print("Error, please enter 1, 2, or 3.")
+
+

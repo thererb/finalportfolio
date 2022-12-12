@@ -1,0 +1,14 @@
+#Name of programmer: Robert Brown
+#Date: 12/5/22
+#Description: file that hosts functions for actions that occur throughout all sections
+import adventure_mc
+
+def heal(): #function for healing injury with checking for bandage in inventory
+    if adventure_mc.injury_status >= 1 and "bandage" in adventure_mc.inventory:
+        adventure_mc.inventory.remove("bandage")
+        adventure_mc.injury_status -= 1
+        print("You have reduced your injury to", adventure_mc.injury_status)
+    elif adventure_mc.injury_status >= 1 and "bandage" not in adventure_mc.inventory:
+        print("You need a bandage to heal yourself.")
+    else:
+        print("Dont need to heal")
