@@ -1,0 +1,46 @@
+# Name of file: adventure_section1
+# Name of programmer: Robert Brown
+# Date: 10/23/22
+# Description: main file that will control the first section of the game
+import adventure_mc
+import adventure_section2
+import random
+import randomevent
+
+
+def start():
+    print("Welcome to the game. \n You are a guy named John and are looking to escape the abandoned hospital.")
+    print("Let's go!")
+    print("You wake up in the infirmary room confused on where you are and what you are doing there.")
+    print("It's time to get moving though...")
+    print("Pick an action")
+    choice = 0
+    while choice != 2: #loop until correct choice is made
+        choice = int(input("1. Search for resources. 2. Go Downstairs 3. Call for help 4. Check the closet"))
+        # Checks if the player has a bandage, and if they don't they can carry one
+        if (choice == 1) and ("bandage" not in adventure_mc.inventory):
+            print("You look around and find something of value, a bandage that can be used to reduce injury!") #Add item pickup or change outcome later
+            adventure_mc.inventory.append("bandage")
+
+        # If the player tries to carry multiple bandages, tell them they can only carry one and injury them
+        elif (choice == 1) and ("bandage" in adventure_mc.inventory):
+            print("Your greed causes you to injury yourself! You can only carry one bandage!")
+            adventure_mc.injury_status = 1
+        elif choice == 2:
+            print("You leave the room and head downstairs to the next floor.")
+            adventure_section2.start()
+        elif choice == 3:
+            print("You call for help but it does not look like anyone can hear you right now.")
+            adventure_mc.helps += 1 #add to help tracker
+        elif choice == 4:
+            randomChoice = int(input("You approach the closet, but hear an ominous noise emanating from it. Do you still want to open it? Yes: 1 No: 2 "))
+            if randomChoice == 1:
+                eventchance = random.randint(1, 2)  # Selects a number from 1 to 2 and assigns it to eventchance.
+                randomevent.randomevent(eventchance)
+            elif randomChoice == 2:
+                print("You decide to leave the closet be, for now...")
+            else:
+                print("You have to choose 1 or 2!")
+        else:
+            print("You said the wrong number! Try again!")
+start()
