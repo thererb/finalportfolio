@@ -1,0 +1,7 @@
+#Robert Brown
+#11/1/2022
+#Loop that prints each of the numbers #Loop that prints each of the numbers and squaresin the list on a new line
+list = [12,10,32,3,66,17,42,99,20]
+for a in list:
+    print(a)
+    print(a**2)
