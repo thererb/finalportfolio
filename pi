@@ -1,0 +1,8 @@
+# Name: Robert Brown
+# Date: 11/08/22
+# Problem 4: Calculate the area of a circle using math.pi module
+import math
+r = input('Please enter the radius of your circle: \n')
+radius = int(r)
+area = math.pi * radius ** 2
+print("The area of the circle is: ", area)
