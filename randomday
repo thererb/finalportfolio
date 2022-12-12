@@ -1,0 +1,6 @@
+# Name: Robert Brown
+# Date: 11/08/22
+# Problem 3: select a day of the week from a list and print that day at random
+import random
+days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+print(random.choice(days))
