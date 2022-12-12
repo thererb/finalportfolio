@@ -1,0 +1,8 @@
+# Name: Robert Brown
+# Date: 11/08/22
+# Problem 5: Calculate pythagorean theorm using user inputs
+import math
+a = int(input("Please enter a number"))
+b = int(input("Please enter another number"))
+c = math.sqrt(math.pow(a,2) + math.pow(b,2))
+print(c)

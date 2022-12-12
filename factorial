@@ -1,0 +1,11 @@
+# Name: Robert Brown
+# Date: 11/08/22
+# Problem 6: takes a number from a user and calculates the factorial of that number
+import math
+num = int(input("Please enter a number: "))
+result = 1
+for m in range(1, num+1):
+    result = m * result
+    print(result)
+
+print(math.factorial(num))

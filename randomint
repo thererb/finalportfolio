@@ -1,0 +1,9 @@
+# Name: Robert Brown
+# Date: 11/08/22
+# Problem 2: print an odd integer between 0 and 100.
+import random
+num = random.randrange(1,101)
+if num % 3 == 0:
+    print("randrange: ", num)
+else:
+    print("This is an even number")
