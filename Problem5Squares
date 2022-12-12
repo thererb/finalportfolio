@@ -1,0 +1,20 @@
+# Robert Brown
+# 11/15/22
+# uses turtle to draw squares in a loop
+import turtle
+
+
+def drawSquare(t, sz):
+    for i in range(22):
+        t.forward(sz)
+        t.left(90)
+        sz = sz - 2
+
+
+wn = turtle.Screen()
+
+alex = turtle.Turtle()
+alex.color("blue")
+drawSquare(alex, 50)
+
+wn.exitonclick()

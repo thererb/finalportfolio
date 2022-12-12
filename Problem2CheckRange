@@ -1,0 +1,11 @@
+# Robert Brown
+# 11/15/22
+# Check if number is between 1 and 10 and return true or false
+numinput = int(input("What is your number?"))
+def checkrange(x):
+    correctlist = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    if x in correctlist:
+        return(True)
+    else:
+        return(False)
+print(checkrange(numinput))
