@@ -1,0 +1,14 @@
+# Robert Brown
+# 11/15/22
+# use append function and for loop to create a unique list
+my_list = [1, 3, 3, 3, 6, 2, 3, 5]
+new_list = []
+
+
+def my_append(my_list, new_list):
+    for name in my_list:
+        if name not in new_list:
+            new_list.append(name)
+    return new_list
+print(my_append(my_list,new_list))
+# use append function and for loop
