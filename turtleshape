@@ -1,0 +1,26 @@
+#Robert Brown
+#11/1/2022
+#Turtle program that asks user fot length of sides, shape, and color and draws the shape
+import turtle
+wn = turtle.Screen()
+Tom = turtle.Turtle()
+
+sidelen = int(input("Please enter the length of the sides"))
+shape = input("1 for triangle, 2 for square")
+fillcol = input("Please enter the color of the shape")
+Tom.pencolor(fillcol)
+if shape == "1":
+    Tom.fillcolor(fillcol)
+    Tom.begin_fill()
+    for num in range(3):
+        Tom.forward(sidelen)
+        Tom.right(120)
+    Tom.end_fill()
+if shape == "2":
+    Tom.fillcolor(fillcol)
+    Tom.begin_fill()
+    for num in range(4):
+        Tom.forward(sidelen)
+        Tom.right(90)
+    Tom.end_fill()
+wn.exitonclick()
