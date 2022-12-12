@@ -1,0 +1,46 @@
+#Robert Brown
+#12/2/22
+#Check items and debuffs for tasks
+class character:
+    def __init__(self, nickname, weapons, weaknesses):
+        self.nickname = nickname
+        self.weapons = weapons
+        self.weaknesses = weaknesses
+
+    def get_model(self):
+        return self.nickname
+
+    def get_year(self):
+        return self.weapons
+
+    def get_color(self):
+        return self. weaknesses
+
+    def profile(self):
+        return self.nickname, self.weapons, self. weaknesses
+
+player1 = character('','','')
+player1.nickname = 'Dragon Slayer'
+player1.weapons = ['pan', 'paper', 'idea', 'rope', 'groceries']
+player1.weaknesses = ['slow']
+for item in player1.weapons:
+    print("Item: ", item)
+
+for debuff in player1.weaknesses:
+    print("Debuff: ", debuff)
+#Task 1
+if player1.weapons == ['rope', 'coat', 'first aid kit'] and player1.weaknesses != ['slow']:
+    print("Mountain Climb!")
+else:
+    print("Mountain fall!")
+#Task 2
+if player1.weapons == ['pan', 'groceries'] and player1.weaknesses != ['small']:
+    print("Meal cooked!!")
+else:
+    print("Meal uncooked!")
+#Task 3
+if player1.weapons == ['paper', 'pen', 'idea'] and player1.weaknesses != ['confusion']:
+    print("Book written!")
+else:
+    print("Book not written!")
+
