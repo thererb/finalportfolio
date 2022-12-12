@@ -1,0 +1,10 @@
+#Name of programmer: Robert Brown
+# Date: 10/23/22
+# Description: while loop that counts to 50 and appends values divisible by 10 to its own list
+counter = 0
+list = []
+while counter <= 50:
+    counter += 1
+    if counter % 10 == 0:
+        list.append(counter)
+        print("divisible by 10", list)
